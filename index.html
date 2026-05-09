@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I3XI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #050505;
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      gap: 70px;
+      background: radial-gradient(circle at center, #151515 0%, #050505 65%);
+    }
+
+    .photo-box {
+      flex: 1;
+      max-width: 520px;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 680px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 0 50px rgba(255, 255, 255, 0.08);
+    }
+
+    .info-box {
+      flex: 1;
+      max-width: 520px;
+    }
+
+    .brand {
+      font-size: 72px;
+      letter-spacing: 8px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .owner {
+      font-size: 24px;
+      color: #c9a46a;
+      margin-bottom: 40px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .details {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      font-size: 22px;
+      line-height: 1.5;
+    }
+
+    .details a {
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid #c9a46a;
+      width: fit-content;
+      padding-bottom: 4px;
+    }
+
+    .details a:hover {
+      color: #c9a46a;
+    }
+
+    .tagline {
+      margin-top: 45px;
+      font-size: 18px;
+      color: #aaa;
+      max-width: 420px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px;
+        gap: 35px;
+      }
+
+      .photo-box img {
+        height: auto;
+        max-height: 520px;
+      }
+
+      .brand {
+        font-size: 52px;
+      }
+
+      .owner {
+        font-size: 19px;
+      }
+
+      .details {
+        align-items: center;
+        font-size: 19px;
+      }
+
+      .tagline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="photo-box">
+      <img src="profile.png" alt="I3XI Owner" />
+    </section>
+
+    <section class="info-box">
+      <h1 class="brand">I3XI</h1>
+      <p class="owner">Owner</p>
+
+      <div class="details">
+        <a href="mailto:info@I3XI.com">info@I3XI.com</a>
+        <a href="https://www.I3XI.com">www.I3XI.com</a>
+      </div>
+
+      <p class="tagline">
+        A bold personal brand built with style, vision, and purpose.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
