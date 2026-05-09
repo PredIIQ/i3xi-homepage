@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>I3XI</title>
+
   <style>
     * {
       margin: 0;
@@ -13,134 +14,154 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #050505;
+      background: #020202;
       color: white;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     .page {
       min-height: 100vh;
       display: flex;
       align-items: center;
+      background: #020202;
+      position: relative;
+    }
+
+    .photo-side {
+      width: 68%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.92;
+      filter: brightness(0.78) contrast(1.08);
+    }
+
+    .photo-side::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(2,2,2,0.1), rgba(2,2,2,0.85)),
+        linear-gradient(to bottom, rgba(2,2,2,0.15), rgba(2,2,2,0.55));
+      pointer-events: none;
+    }
+
+    .info-side {
+      width: 32%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
       justify-content: center;
       padding: 40px;
-      gap: 70px;
-      background: radial-gradient(circle at center, #151515 0%, #050505 65%);
-    }
-
-    .photo-box {
-      flex: 1;
-      max-width: 520px;
-    }
-
-    .photo-box img {
-      width: 100%;
-      height: 680px;
-      object-fit: cover;
-      border-radius: 28px;
-      box-shadow: 0 0 50px rgba(255, 255, 255, 0.08);
+      background: #020202;
     }
 
     .info-box {
-      flex: 1;
-      max-width: 520px;
+      width: 100%;
+      max-width: 280px;
     }
 
     .brand {
-      font-size: 72px;
-      letter-spacing: 8px;
+      font-size: 38px;
+      letter-spacing: 7px;
       font-weight: 800;
-      margin-bottom: 18px;
+      margin-bottom: 10px;
     }
 
     .owner {
-      font-size: 24px;
+      font-size: 12px;
       color: #c9a46a;
-      margin-bottom: 40px;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       text-transform: uppercase;
+      margin-bottom: 28px;
     }
 
     .details {
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      font-size: 22px;
-      line-height: 1.5;
+      gap: 12px;
+      font-size: 13px;
+      letter-spacing: 1px;
     }
 
     .details a {
-      color: #ffffff;
+      color: #d8d8d8;
       text-decoration: none;
-      border-bottom: 1px solid #c9a46a;
       width: fit-content;
       padding-bottom: 4px;
+      border-bottom: 1px solid rgba(201, 164, 106, 0.55);
     }
 
     .details a:hover {
       color: #c9a46a;
     }
 
-    .tagline {
-      margin-top: 45px;
-      font-size: 18px;
-      color: #aaa;
-      max-width: 420px;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 900px) {
-      .page {
-        flex-direction: column;
-        text-align: center;
-        padding: 28px;
-        gap: 35px;
+    @media (max-width: 850px) {
+      body {
+        overflow: auto;
       }
 
-      .photo-box img {
+      .page {
+        flex-direction: column;
+      }
+
+      .photo-side {
+        width: 100%;
+        height: 68vh;
+      }
+
+      .photo-side::after {
+        background:
+          linear-gradient(to bottom, rgba(2,2,2,0.05), rgba(2,2,2,1));
+      }
+
+      .info-side {
+        width: 100%;
         height: auto;
-        max-height: 520px;
+        min-height: 32vh;
+        padding: 30px 24px 45px;
+        text-align: center;
+      }
+
+      .info-box {
+        max-width: 100%;
       }
 
       .brand {
-        font-size: 52px;
-      }
-
-      .owner {
-        font-size: 19px;
+        font-size: 34px;
       }
 
       .details {
         align-items: center;
-        font-size: 19px;
-      }
-
-      .tagline {
-        margin-left: auto;
-        margin-right: auto;
       }
     }
   </style>
 </head>
+
 <body>
   <main class="page">
-    <section class="photo-box">
+    <section class="photo-side">
       <img src="profile.png" alt="I3XI Owner" />
     </section>
 
-    <section class="info-box">
-      <h1 class="brand">I3XI</h1>
-      <p class="owner">Owner</p>
+    <section class="info-side">
+      <div class="info-box">
+        <h1 class="brand">I3XI</h1>
+        <p class="owner">Owner</p>
 
-      <div class="details">
-        <a href="mailto:info@I3XI.com">info@I3XI.com</a>
-        <a href="https://www.I3XI.com">www.I3XI.com</a>
+        <div class="details">
+          <a href="mailto:info@I3XI.com">info@I3XI.com</a>
+          <a href="https://www.I3XI.com">www.I3XI.com</a>
+        </div>
       </div>
-
-      <p class="tagline">
-        A bold personal brand built with style, vision, and purpose.
-      </p>
     </section>
   </main>
 </body>
