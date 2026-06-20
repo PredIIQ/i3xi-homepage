@@ -5,36 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Contact I3XI LLC</title>
-
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html,
-    body {
+    html, body {
       width: 100%;
-      height: 100%;
-      overflow: hidden;
+      min-height: 100%;
       font-family: Arial, sans-serif;
       background: #020202;
       color: white;
     }
 
-    .page {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      position: relative;
-      background: #020202;
+    .background-image {
+      position: fixed;
+      inset: 0;
+      background-image: url("profile.png");
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.16;
+      z-index: -2;
+    }
+
+    .background-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 2, 2, 0.86);
+      z-index: -1;
     }
 
     .nav {
-      position: absolute;
+      position: fixed;
       top: 35px;
       right: 50px;
       z-index: 10;
@@ -51,69 +53,24 @@
       transition: 0.3s ease;
     }
 
-    .nav a:hover {
-      color: #c9a46a;
-    }
+    .nav a:hover { color: #c9a46a; }
 
-    .photo-side {
-      width: 65%;
-      height: 100vh;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .photo-side img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      opacity: 0.92;
-      filter: brightness(0.78) contrast(1.08);
-      transform: scale(1.02);
-    }
-
-    .photo-side::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          to right,
-          rgba(2,2,2,0.05),
-          rgba(2,2,2,0.88)
-        ),
-        linear-gradient(
-          to bottom,
-          rgba(2,2,2,0.1),
-          rgba(2,2,2,0.55)
-        );
-      pointer-events: none;
-    }
-
-    .info-side {
-      width: 35%;
-      height: 100vh;
-      overflow-y: auto;
+    .content-wrapper {
+      min-height: 100vh;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 32px 95px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 90px 50px 80px;
-      background: #020202;
-      position: relative;
-      z-index: 2;
-    }
-
-    .info-box {
-      width: 100%;
-      max-width: 390px;
+      text-align: center;
     }
 
     .brand {
-      font-size: 40px;
+      font-size: 42px;
       font-weight: 800;
       letter-spacing: 7px;
       margin-bottom: 12px;
-      color: white;
     }
 
     .page-title {
@@ -121,18 +78,18 @@
       color: #c9a46a;
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
     .intro {
-      font-size: 13px;
+      font-size: 14px;
       color: rgba(255,255,255,0.82);
       line-height: 1.9;
-      margin-bottom: 34px;
+      margin-bottom: 38px;
     }
 
     .contact-block {
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .label {
@@ -147,7 +104,7 @@
     .contact-block p {
       color: #d7d7d7;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 14px;
       letter-spacing: 1px;
       line-height: 1.8;
     }
@@ -155,12 +112,6 @@
     .contact-block a {
       border-bottom: 1px solid rgba(201,164,106,0.5);
       padding-bottom: 4px;
-      transition: 0.3s ease;
-    }
-
-    .contact-block a:hover {
-      color: #c9a46a;
-      border-color: #c9a46a;
     }
 
     .services {
@@ -171,8 +122,8 @@
 
     .services-list {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
       color: rgba(255,255,255,0.74);
       font-size: 12px;
       letter-spacing: 1px;
@@ -180,7 +131,7 @@
     }
 
     .copyright {
-      position: absolute;
+      position: fixed;
       bottom: 25px;
       right: 50px;
       font-size: 11px;
@@ -190,15 +141,6 @@
     }
 
     @media (max-width: 850px) {
-      html,
-      body {
-        overflow-y: auto;
-      }
-
-      .page {
-        flex-direction: column;
-      }
-
       .nav {
         top: 24px;
         right: 0;
@@ -207,39 +149,16 @@
         gap: 22px;
       }
 
-      .nav a {
-        font-size: 11px;
+      .nav a { font-size: 11px; }
+
+      .content-wrapper {
+        padding: 105px 25px 90px;
       }
 
-      .photo-side {
-        width: 100%;
-        height: 45vh;
-      }
+      .brand { font-size: 34px; }
 
-      .photo-side::after {
-        background:
-          linear-gradient(
-            to bottom,
-            rgba(2,2,2,0.05),
-            rgba(2,2,2,1)
-          );
-      }
-
-      .info-side {
-        width: 100%;
-        height: auto;
-        min-height: 55vh;
-        overflow: visible;
-        text-align: center;
-        padding: 35px 25px 90px;
-      }
-
-      .info-box {
-        max-width: 390px;
-      }
-
-      .brand {
-        font-size: 34px;
+      .services-list {
+        grid-template-columns: 1fr;
       }
 
       .copyright {
@@ -255,68 +174,58 @@
 
 <body>
 
+  <div class="background-image"></div>
+  <div class="background-overlay"></div>
+
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <main class="page">
+  <main class="content-wrapper">
+    <section>
 
-    <section class="photo-side">
-      <img src="profile.png" alt="I3XI LLC" />
-    </section>
+      <h1 class="brand">I3XI LLC</h1>
+      <p class="page-title">Contact</p>
 
-    <section class="info-side">
+      <p class="intro">
+        For questions, enquiries, business opportunities, software development, creative media, photography, videography, technology solutions, or strategic partnerships, I3XI LLC can be contacted by email, phone, or mail.
+      </p>
 
-      <div class="info-box">
+      <div class="contact-block">
+        <div class="label">Email</div>
+        <a href="mailto:contact@I3XI.com">contact@I3XI.com</a>
+      </div>
 
-        <h1 class="brand">I3XI LLC</h1>
+      <div class="contact-block">
+        <div class="label">Phone</div>
+        <a href="tel:+14695567447">+1 (469) 556-7447</a>
+      </div>
 
-        <p class="page-title">
-          Contact
+      <div class="contact-block">
+        <div class="label">Mailing Address</div>
+        <p>
+          3419 Westminster Ave<br>
+          Dallas, Texas 75205-1387<br>
+          United States
         </p>
+      </div>
 
-        <p class="intro">
-          For questions, enquiries, business opportunities, software development, creative media, photography, videography, technology solutions, or strategic partnerships, I3XI LLC can be contacted by email, phone, or mail.
-        </p>
+      <div class="services">
+        <div class="label">Business Inquiries</div>
 
-        <div class="contact-block">
-          <div class="label">Email</div>
-          <a href="mailto:contact@I3XI.com">contact@I3XI.com</a>
+        <div class="services-list">
+          <div>Software Development</div>
+          <div>Mobile Applications</div>
+          <div>Artificial Intelligence Solutions</div>
+          <div>Photography & Videography</div>
+          <div>Creative Media Production</div>
+          <div>Strategic Partnerships</div>
         </div>
-
-        <div class="contact-block">
-          <div class="label">Phone</div>
-          <a href="tel:+14695567447">+1 (469) 556-7447</a>
-        </div>
-
-        <div class="contact-block">
-          <div class="label">Mailing Address</div>
-          <p>
-            3419 Westminster Ave<br>
-            Dallas, Texas 75205-1387<br>
-            United States
-          </p>
-        </div>
-
-        <div class="services">
-          <div class="label">Business Inquiries</div>
-
-          <div class="services-list">
-            <div>Software Development</div>
-            <div>Mobile Applications</div>
-            <div>Artificial Intelligence Solutions</div>
-            <div>Photography & Videography</div>
-            <div>Creative Media Production</div>
-            <div>Strategic Partnerships</div>
-          </div>
-        </div>
-
       </div>
 
     </section>
-
   </main>
 
   <footer class="copyright">
