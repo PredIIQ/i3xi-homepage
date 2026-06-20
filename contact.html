@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,9 +9,14 @@
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       min-height: 100%;
       font-family: Arial, sans-serif;
@@ -24,23 +30,29 @@
       background-image: url("profile.png");
       background-size: cover;
       background-position: center center;
-      opacity: 0.45;
-      filter: brightness(0.75) contrast(1.08);
+      opacity: 0.40;
+      filter: brightness(0.85) contrast(1.08);
       z-index: 0;
     }
 
     .background-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(2, 2, 2, 0.50);
+      background: rgba(2, 2, 2, 0.55);
       z-index: 1;
+    }
+
+    .nav,
+    .content-wrapper,
+    .copyright {
+      position: relative;
+      z-index: 2;
     }
 
     .nav {
       position: fixed;
       top: 35px;
       right: 50px;
-      z-index: 10;
       display: flex;
       gap: 28px;
     }
@@ -54,11 +66,14 @@
       transition: 0.3s ease;
     }
 
-    .nav a:hover { color: #c9a46a; }
+    .nav a:hover {
+      color: #c9a46a;
+    }
 
     .content-wrapper {
       min-height: 100vh;
-      max-width: 760px;
+      width: 100%;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 120px 32px 95px;
       display: flex;
@@ -83,14 +98,14 @@
     }
 
     .intro {
-      font-size: 14px;
-      color: rgba(255,255,255,0.82);
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
       line-height: 1.9;
-      margin-bottom: 38px;
+      margin-bottom: 40px;
     }
 
     .contact-block {
-      margin-bottom: 26px;
+      margin-bottom: 30px;
     }
 
     .label {
@@ -98,14 +113,14 @@
       color: #c9a46a;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .contact-block a,
     .contact-block p {
-      color: #d7d7d7;
+      color: #e0e0e0;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 15px;
       letter-spacing: 1px;
       line-height: 1.8;
     }
@@ -116,19 +131,19 @@
     }
 
     .services {
-      margin-top: 34px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.15);
     }
 
     .services-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      color: rgba(255,255,255,0.74);
-      font-size: 12px;
+      gap: 12px;
+      color: rgba(255,255,255,0.80);
+      font-size: 13px;
       letter-spacing: 1px;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     .copyright {
@@ -138,10 +153,10 @@
       font-size: 11px;
       color: rgba(255,255,255,0.35);
       letter-spacing: 1px;
-      z-index: 10;
     }
 
     @media (max-width: 850px) {
+
       .nav {
         top: 24px;
         right: 0;
@@ -150,13 +165,17 @@
         gap: 22px;
       }
 
-      .nav a { font-size: 11px; }
+      .nav a {
+        font-size: 11px;
+      }
 
       .content-wrapper {
         padding: 105px 25px 90px;
       }
 
-      .brand { font-size: 34px; }
+      .brand {
+        font-size: 34px;
+      }
 
       .services-list {
         grid-template-columns: 1fr;
@@ -164,13 +183,14 @@
 
       .copyright {
         position: relative;
-        bottom: auto;
         right: auto;
+        bottom: auto;
         text-align: center;
         padding: 20px;
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -187,46 +207,52 @@
   <main class="content-wrapper">
     <section>
 
-      <h1 class="brand">I3XI LLC</h1>
-      <p class="page-title">Contact</p>
+```
+  <h1 class="brand">I3XI LLC</h1>
 
-      <p class="intro">
-        For questions, enquiries, business opportunities, software development, creative media, photography, videography, technology solutions, or strategic partnerships, I3XI LLC can be contacted by email, phone, or mail.
-      </p>
+  <p class="page-title">
+    Contact
+  </p>
 
-      <div class="contact-block">
-        <div class="label">Email</div>
-        <a href="mailto:contact@I3XI.com">contact@I3XI.com</a>
-      </div>
+  <p class="intro">
+    For questions, enquiries, business opportunities, software development, creative media, photography, videography, technology solutions, or strategic partnerships, I3XI LLC can be contacted by email, phone, or mail.
+  </p>
 
-      <div class="contact-block">
-        <div class="label">Phone</div>
-        <a href="tel:+14695567447">+1 (469) 556-7447</a>
-      </div>
+  <div class="contact-block">
+    <div class="label">Email</div>
+    <a href="mailto:contact@I3XI.com">contact@I3XI.com</a>
+  </div>
 
-      <div class="contact-block">
-        <div class="label">Mailing Address</div>
-        <p>
-          3419 Westminster Ave<br>
-          Dallas, Texas 75205-1387<br>
-          United States
-        </p>
-      </div>
+  <div class="contact-block">
+    <div class="label">Phone</div>
+    <a href="tel:+14695567447">+1 (469) 556-7447</a>
+  </div>
 
-      <div class="services">
-        <div class="label">Business Inquiries</div>
+  <div class="contact-block">
+    <div class="label">Mailing Address</div>
+    <p>
+      3419 Westminster Ave<br>
+      Dallas, Texas 75205-1387<br>
+      United States
+    </p>
+  </div>
 
-        <div class="services-list">
-          <div>Software Development</div>
-          <div>Mobile Applications</div>
-          <div>Artificial Intelligence Solutions</div>
-          <div>Photography & Videography</div>
-          <div>Creative Media Production</div>
-          <div>Strategic Partnerships</div>
-        </div>
-      </div>
+  <div class="services">
+    <div class="label">Business Inquiries</div>
 
-    </section>
+    <div class="services-list">
+      <div>Software Development</div>
+      <div>Mobile Applications</div>
+      <div>Artificial Intelligence Solutions</div>
+      <div>Photography & Videography</div>
+      <div>Creative Media Production</div>
+      <div>Strategic Partnerships</div>
+    </div>
+  </div>
+
+</section>
+```
+
   </main>
 
   <footer class="copyright">
