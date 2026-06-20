@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>I3XI</title>
+
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
@@ -28,8 +29,32 @@
       width: 100%;
       height: 100vh;
       display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       background: #020202;
+    }
+
+    .nav {
+      position: absolute;
+      top: 35px;
+      right: 50px;
+      z-index: 10;
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #c9a46a;
     }
 
     .photo-side {
@@ -54,8 +79,17 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to right, rgba(2,2,2,0.05), rgba(2,2,2,0.88)),
-        linear-gradient(to bottom, rgba(2,2,2,0.1), rgba(2,2,2,0.55));
+        linear-gradient(
+          to right,
+          rgba(2, 2, 2, 0.05),
+          rgba(2, 2, 2, 0.88)
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(2, 2, 2, 0.1),
+          rgba(2, 2, 2, 0.55)
+        );
+      pointer-events: none;
     }
 
     .info-side {
@@ -66,6 +100,7 @@
       justify-content: center;
       padding: 50px;
       background: #020202;
+      position: relative;
       z-index: 2;
     }
 
@@ -79,10 +114,12 @@
       font-weight: 800;
       letter-spacing: 8px;
       margin-bottom: 16px;
+      color: white;
     }
 
     .name {
       font-size: 14px;
+      color: #ffffff;
       letter-spacing: 1px;
       line-height: 1.7;
       margin-bottom: 12px;
@@ -108,7 +145,7 @@
       font-size: 13px;
       letter-spacing: 1px;
       width: fit-content;
-      border-bottom: 1px solid rgba(201,164,106,0.5);
+      border-bottom: 1px solid rgba(201, 164, 106, 0.5);
       padding-bottom: 5px;
       transition: 0.3s ease;
     }
@@ -119,13 +156,13 @@
     }
 
     .copyright {
-      position: fixed;
-      bottom: 18px;
-      right: 30px;
+      position: absolute;
+      bottom: 25px;
+      right: 50px;
       font-size: 11px;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.35);
       letter-spacing: 1px;
-      z-index: 5;
+      z-index: 10;
     }
 
     @media (max-width: 850px) {
@@ -138,20 +175,37 @@
         flex-direction: column;
       }
 
+      .nav {
+        top: 24px;
+        right: 0;
+        left: 0;
+        justify-content: center;
+        gap: 22px;
+      }
+
+      .nav a {
+        font-size: 11px;
+      }
+
       .photo-side {
         width: 100%;
         height: 68vh;
       }
 
       .photo-side::after {
-        background: linear-gradient(to bottom, rgba(2,2,2,0.05), rgba(2,2,2,1));
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(2,2,2,0.05),
+            rgba(2,2,2,1)
+          );
       }
 
       .info-side {
         width: 100%;
         height: auto;
         min-height: 32vh;
-        padding: 35px 25px 70px;
+        padding: 35px 25px 75px;
         text-align: center;
       }
 
@@ -168,41 +222,66 @@
       }
 
       .copyright {
-        position: relative;
-        bottom: auto;
-        right: auto;
+        position: fixed;
+        bottom: 18px;
+        right: 0;
+        left: 0;
         text-align: center;
-        padding-bottom: 20px;
+        font-size: 10px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="mailto:info@I3XI.com">Contact</a>
+  </nav>
+
   <main class="page">
+
     <section class="photo-side">
       <img src="profile.png" alt="Tosin Peter Okunowo" />
     </section>
 
     <section class="info-side">
+
       <div class="info-box">
+
         <h1 class="brand">I3XI</h1>
 
-        <p class="name">Tosin Peter Okunowo</p>
+        <p class="name">
+          Tosin Peter Okunowo
+        </p>
 
-        <p class="owner">Owner</p>
+        <p class="owner">
+          Owner
+        </p>
 
         <div class="details">
-          <a href="mailto:info@I3XI.com">info@I3XI.com</a>
-          <a href="https://www.I3XI.com" target="_blank">www.I3XI.com</a>
-          <a href="about.html">About I3XI LLC</a>
+
+          <a href="mailto:info@I3XI.com">
+            info@I3XI.com
+          </a>
+
+          <a href="https://www.I3XI.com" target="_blank">
+            www.I3XI.com
+          </a>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
   <footer class="copyright">
     © 2026 I3XI LLC. All Rights Reserved.
   </footer>
+
 </body>
 </html>
