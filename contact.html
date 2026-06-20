@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact I3XI LLC</title>
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      font-family: Arial, sans-serif;
+      background: #020202;
+      color: white;
+    }
+
+    body {
+      background: #020202;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      position: relative;
+      background: #020202;
+    }
+
+    .nav {
+      position: fixed;
+      top: 35px;
+      right: 50px;
+      z-index: 10;
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #c9a46a;
+    }
+
+    .photo-side {
+      width: 68%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.92;
+      filter: brightness(0.78) contrast(1.08);
+      transform: scale(1.02);
+    }
+
+    .photo-side::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to right,
+          rgba(2,2,2,0.05),
+          rgba(2,2,2,0.88)
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(2,2,2,0.1),
+          rgba(2,2,2,0.55)
+        );
+      pointer-events: none;
+    }
+
+    .info-side {
+      width: 32%;
+      min-height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 90px 50px 80px;
+      background: #020202;
+      position: relative;
+      z-index: 2;
+    }
+
+    .info-box {
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .brand {
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: 8px;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .owner {
+      font-size: 11px;
+      color: #c9a46a;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .about-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.9;
+      margin-bottom: 22px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
+      padding: 13px 14px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      outline: none;
+      font-family: Arial, sans-serif;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: rgba(201,164,106,0.8);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 8px;
+      background: transparent;
+      color: #c9a46a;
+      border: 1px solid rgba(201,164,106,0.65);
+      padding: 13px 16px;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #c9a46a;
+      color: #020202;
+    }
+
+    .copyright {
+      position: fixed;
+      bottom: 25px;
+      right: 50px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+      z-index: 10;
+    }
+
+    @media (max-width: 850px) {
+      .page {
+        flex-direction: column;
+      }
+
+      .nav {
+        top: 24px;
+        right: 0;
+        left: 0;
+        justify-content: center;
+        gap: 22px;
+      }
+
+      .nav a {
+        font-size: 11px;
+      }
+
+      .photo-side {
+        width: 100%;
+        height: 45vh;
+      }
+
+      .photo-side::after {
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(2,2,2,0.05),
+            rgba(2,2,2,1)
+          );
+      }
+
+      .info-side {
+        width: 100%;
+        min-height: 55vh;
+        text-align: center;
+        padding: 35px 25px 95px;
+      }
+
+      .info-box {
+        max-width: 100%;
+      }
+
+      .brand {
+        font-size: 34px;
+      }
+
+      .copyright {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="page">
+
+    <section class="photo-side">
+      <img src="profile.png" alt="Tosin Peter Okunowo" />
+    </section>
+
+    <section class="info-side">
+
+      <div class="info-box">
+
+        <h1 class="brand">I3XI</h1>
+
+        <p class="owner">
+          Contact I3XI LLC
+        </p>
+
+        <p class="about-text">
+          For business, creative media, software development, photography, videography, or brand inquiries, send us a message below.
+        </p>
+
+        <form action="https://formsubmit.co/info@I3XI.com" method="POST">
+
+          <input type="hidden" name="_subject" value="New message from I3XI.com">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <input type="text" name="name" placeholder="Name" required>
+
+          <input type="email" name="email" placeholder="Email" required>
+
+          <input type="text" name="phone" placeholder="Phone">
+
+          <textarea name="message" placeholder="Message" required></textarea>
+
+          <button type="submit">Send Message</button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="copyright">
+    © 2026 I3XI LLC. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
