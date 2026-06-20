@@ -58,7 +58,7 @@
     }
 
     .photo-side {
-      width: 68%;
+      width: 65%;
       height: 100vh;
       position: relative;
       overflow: hidden;
@@ -93,7 +93,7 @@
     }
 
     .info-side {
-      width: 32%;
+      width: 35%;
       height: 100vh;
       display: flex;
       align-items: center;
@@ -106,7 +106,7 @@
 
     .info-box {
       width: 100%;
-      max-width: 360px;
+      max-width: 390px;
     }
 
     .brand {
@@ -152,31 +152,23 @@
     .brand-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 20px;
+      gap: 24px;
+      margin-top: 30px;
+      align-items: center;
+      justify-items: center;
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 65px;
-      padding: 10px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.02);
-      transition: all 0.3s ease;
-    }
-
-    .brand-logo:hover {
-      border-color: rgba(201,164,106,0.75);
-      transform: translateY(-2px);
     }
 
     .brand-logo img {
-      max-width: 90%;
-      max-height: 40px;
       width: auto;
       height: auto;
+      max-width: 100%;
+      max-height: 75px;
       object-fit: contain;
     }
 
@@ -235,7 +227,7 @@
       }
 
       .info-box {
-        max-width: 360px;
+        max-width: 390px;
       }
 
       .brand {
@@ -248,11 +240,11 @@
 
       .brand-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 20px;
       }
 
-      .brand-logo {
-        height: 58px;
+      .brand-logo img {
+        max-height: 70px;
       }
 
       .copyright {
