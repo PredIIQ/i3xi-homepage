@@ -56,7 +56,7 @@
     }
 
     .photo-side {
-      width: 68%;
+      width: 65%;
       height: 100vh;
       position: relative;
       overflow: hidden;
@@ -91,13 +91,13 @@
     }
 
     .info-side {
-      width: 32%;
+      width: 35%;
       height: 100vh;
       overflow-y: auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 50px;
+      padding: 90px 50px 80px;
       background: #020202;
       position: relative;
       z-index: 2;
@@ -105,17 +105,17 @@
 
     .info-box {
       width: 100%;
-      max-width: 340px;
+      max-width: 420px;
     }
 
     .brand {
       font-size: 40px;
       font-weight: 800;
-      letter-spacing: 8px;
+      letter-spacing: 7px;
       margin-bottom: 12px;
     }
 
-    .owner {
+    .page-title {
       font-size: 11px;
       color: #c9a46a;
       letter-spacing: 4px;
@@ -131,7 +131,7 @@
     }
 
     .section-title {
-      font-size: 11px;
+      font-size: 10px;
       color: #c9a46a;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -139,12 +139,17 @@
       margin-bottom: 14px;
     }
 
-    .project-list {
-      display: flex;
-      flex-direction: column;
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.82);
+      margin-top: 10px;
+    }
+
+    .project {
+      color: rgba(255,255,255,0.85);
+      font-size: 12px;
+      letter-spacing: 1px;
     }
 
     .copyright {
@@ -178,7 +183,7 @@
 
       .photo-side {
         width: 100%;
-        height: 50vh;
+        height: 45vh;
       }
 
       .photo-side::after {
@@ -193,14 +198,22 @@
       .info-side {
         width: 100%;
         height: auto;
-        min-height: 50vh;
+        min-height: 55vh;
         overflow: visible;
         text-align: center;
-        padding: 35px 25px 80px;
+        padding: 35px 25px 90px;
+      }
+
+      .info-box {
+        max-width: 420px;
       }
 
       .brand {
         font-size: 34px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
       }
 
       .copyright {
@@ -219,31 +232,31 @@
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="mailto:info@I3XI.com">Contact</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <main class="page">
 
     <section class="photo-side">
-      <img src="profile.png" alt="Tosin Peter Okunowo" />
+      <img src="profile.png" alt="I3XI LLC">
     </section>
 
     <section class="info-side">
 
       <div class="info-box">
 
-        <h1 class="brand">I3XI</h1>
+        <h1 class="brand">I3XI LLC</h1>
 
-        <p class="owner">
-          About I3XI LLC
+        <p class="page-title">
+          About Us
         </p>
 
         <p class="about-text">
-          I3XI LLC is a Texas-based technology and creative media company founded by Tosin Peter Okunowo in 2026.
+          I3XI LLC is a Texas-based technology and creative media company founded in 2026 by Tosin Peter Okunowo. The company was established with a vision to build innovative technology solutions, digital products, creative media experiences, and future-focused ventures under one unified brand.
         </p>
 
         <p class="about-text">
-          We build software, digital experiences, photography, videography, creative brands, and modern technology solutions designed to combine innovation, creativity, and execution under one identity.
+          Our work spans software development, mobile applications, artificial intelligence, photography, videography, digital media production, and emerging technologies. We combine technical innovation with creative execution to develop products and experiences that are both practical and impactful.
         </p>
 
         <div class="section-title">
@@ -251,31 +264,36 @@
         </div>
 
         <p class="about-text">
-          Our work spans software development, mobile applications, web platforms, artificial intelligence tools, photography, videography, digital media, visual branding, and future technology ventures.
+          We design, develop, and manage software platforms, mobile applications, AI-powered solutions, digital content, visual media, and technology-driven brands. Our goal is to create products that solve real problems while delivering exceptional user experiences.
         </p>
 
         <div class="section-title">
-          Projects
+          Our Mission
         </div>
 
-        <div class="project-list">
-          <div>I3XI Pro</div>
-          <div>PredIIQ</div>
-          <div>GymVerge</div>
-          <div>CommVerse</div>
-          <div>I3XI Studio</div>
+        <p class="about-text">
+          To build technology that empowers people, create experiences that inspire, and develop brands that stand the test of time.
+        </p>
+
+        <div class="section-title">
+          Our Projects
+        </div>
+
+        <div class="projects">
+          <div class="project">GymVerge</div>
+          <div class="project">I3XI Pro</div>
+          <div class="project">PredIIQ</div>
+          <div class="project">I3XI Studio</div>
+          <div class="project">CommVerse</div>
+          <div class="project">OLU</div>
         </div>
 
         <div class="section-title">
-          Vision
+          Looking Forward
         </div>
 
         <p class="about-text">
-          We believe great technology should be functional, beautiful, and purposeful. Our mission is to create products and experiences that people genuinely enjoy using while helping businesses and individuals tell their stories through technology and media.
-        </p>
-
-        <p class="about-text">
-          I3XI LLC represents a commitment to building lasting products, meaningful brands, and innovative solutions for the future.
+          As I3XI LLC continues to grow, we remain committed to innovation, creativity, and excellence. We are actively expanding our ecosystem of software products, creative services, and AI-powered technologies designed to serve individuals, businesses, and communities worldwide.
         </p>
 
       </div>
