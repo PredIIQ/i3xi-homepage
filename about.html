@@ -8,9 +8,14 @@
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       min-height: 100%;
       font-family: Arial, sans-serif;
@@ -24,14 +29,19 @@
       background-image: url("profile.png");
       background-size: cover;
       background-position: center center;
-      opacity: 0.16;
+      opacity: 0.14;
       z-index: -2;
     }
 
     .background-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(2, 2, 2, 0.86);
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(2, 2, 2, 0.86),
+          rgba(2, 2, 2, 0.92)
+        );
       z-index: -1;
     }
 
@@ -58,64 +68,72 @@
     }
 
     .content-wrapper {
+      width: 100%;
       min-height: 100vh;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 120px 32px 95px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      padding: 125px 80px 110px;
     }
 
     .content-box {
       width: 100%;
+      max-width: 1250px;
+      margin: 0 auto;
+      text-align: left;
     }
 
     .brand {
-      font-size: 42px;
+      font-size: 46px;
       font-weight: 800;
       letter-spacing: 7px;
       margin-bottom: 12px;
     }
 
     .page-title {
-      font-size: 11px;
+      font-size: 12px;
       color: #c9a46a;
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 35px;
+      margin-bottom: 38px;
     }
 
     .about-text {
-      font-size: 14px;
-      color: rgba(255,255,255,0.82);
-      line-height: 1.9;
-      margin-bottom: 18px;
+      max-width: 1120px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.84);
+      line-height: 2;
+      margin-bottom: 20px;
     }
 
     .section-title {
-      font-size: 10px;
+      font-size: 12px;
+      font-weight: 700;
       color: #c9a46a;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-top: 32px;
-      margin-bottom: 14px;
+      margin-top: 42px;
+      margin-bottom: 16px;
     }
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      max-width: 620px;
-      margin: 0 auto 25px;
+      grid-template-columns: repeat(3, max-content);
+      gap: 14px 34px;
+      justify-content: start;
+      margin: 0 0 28px;
     }
 
     .project {
-      color: rgba(255,255,255,0.85);
-      font-size: 12px;
+      color: rgba(255,255,255,0.88);
+      font-size: 13px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+    }
+
+    .closing-line {
+      color: #c9a46a;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 30px;
     }
 
     .copyright {
@@ -129,7 +147,6 @@
     }
 
     @media (max-width: 850px) {
-
       .nav {
         top: 24px;
         right: 0;
@@ -146,12 +163,29 @@
         padding: 105px 25px 90px;
       }
 
+      .content-box {
+        max-width: 100%;
+      }
+
       .brand {
         font-size: 34px;
+        letter-spacing: 5px;
+      }
+
+      .page-title {
+        font-size: 11px;
+        margin-bottom: 30px;
+      }
+
+      .about-text {
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.9;
       }
 
       .projects {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, max-content);
+        gap: 14px 24px;
       }
 
       .copyright {
@@ -159,7 +193,13 @@
         bottom: auto;
         right: auto;
         text-align: center;
-        padding: 20px;
+        padding: 25px 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .projects {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -177,14 +217,11 @@
   </nav>
 
   <main class="content-wrapper">
-
     <section class="content-box">
 
       <h1 class="brand">I3XI LLC</h1>
 
-      <p class="page-title">
-        About Us
-      </p>
+      <p class="page-title">About Us</p>
 
       <p class="about-text">
         I3XI LLC is a Texas-based technology and creative media company founded in 2026.
@@ -202,9 +239,7 @@
         Our operations span software development, mobile applications, artificial intelligence, photography, videography, digital media production, and emerging technologies. By combining technical expertise with creative thinking, we strive to develop solutions that are reliable, scalable, and impactful.
       </p>
 
-      <div class="section-title">
-        What We Do
-      </div>
+      <div class="section-title">What We Do</div>
 
       <p class="about-text">
         I3XI LLC develops and manages a growing portfolio of technology and creative ventures. Our work includes software engineering, product development, visual media production, digital content creation, artificial intelligence initiatives, and technology consulting.
@@ -214,9 +249,7 @@
         Every project is approached with a focus on user experience, performance, simplicity, and long-term sustainability.
       </p>
 
-      <div class="section-title">
-        Our Projects
-      </div>
+      <div class="section-title">Our Projects</div>
 
       <div class="projects">
         <div class="project">GymVerge</div>
@@ -251,36 +284,29 @@
         OLU is an artificial intelligence initiative focused on developing intelligent digital assistants capable of helping users interact with technology more naturally, automate tasks, and improve productivity.
       </p>
 
-      <div class="section-title">
-        Our Approach
-      </div>
+      <div class="section-title">Our Approach</div>
 
       <p class="about-text">
         We believe that great products are built through thoughtful design, disciplined execution, and continuous innovation. Whether developing software, producing creative content, or exploring artificial intelligence, our goal remains the same: deliver meaningful solutions that people trust and enjoy using.
       </p>
 
-      <div class="section-title">
-        Our Vision
-      </div>
+      <div class="section-title">Our Vision</div>
 
       <p class="about-text">
         To build a globally recognized portfolio of technology products, intelligent systems, and creative ventures that positively influence how people live, work, communicate, and create.
       </p>
 
-      <div class="section-title">
-        Our Mission
-      </div>
+      <div class="section-title">Our Mission</div>
 
       <p class="about-text">
         To build technology that empowers people, create experiences that inspire, and develop brands that stand the test of time.
       </p>
 
-      <p class="about-text">
+      <p class="closing-line">
         Building Technology. Creating Experiences.
       </p>
 
     </section>
-
   </main>
 
   <footer class="copyright">
