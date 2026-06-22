@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -22,6 +21,26 @@
       font-family: Arial, sans-serif;
       background: #020202;
       color: white;
+    }
+
+    body {
+      animation: pageFade 0.7s ease forwards;
+    }
+
+    @keyframes pageFade {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    a {
+      transition: color 0.3s ease, opacity 0.3s ease;
     }
 
     .background-image {
@@ -63,7 +82,6 @@
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      transition: 0.3s ease;
     }
 
     .nav a:hover {
@@ -190,7 +208,6 @@
       }
     }
   </style>
-
 </head>
 
 <body>
@@ -207,52 +224,49 @@
   <main class="content-wrapper">
     <section>
 
-```
-  <h1 class="brand">I3XI LLC</h1>
+      <h1 class="brand">I3XI LLC</h1>
 
-  <p class="page-title">
-    Contact
-  </p>
+      <p class="page-title">
+        Contact
+      </p>
 
-  <p class="intro">
-    For questions, enquiries, business opportunities, software development, creative media, photography, videography, technology solutions, or strategic partnerships, I3XI LLC can be contacted by email, phone, or mail.
-  </p>
+      <p class="intro">
+        For questions, enquiries, business opportunities, software development, creative media, photography, videography, technology solutions, or strategic partnerships, I3XI LLC can be contacted by email, phone, or mail.
+      </p>
 
-  <div class="contact-block">
-    <div class="label">Email</div>
-    <a href="mailto:contact@I3XI.com">contact@I3XI.com</a>
-  </div>
+      <div class="contact-block">
+        <div class="label">Email</div>
+        <a href="mailto:contact@I3XI.com">contact@I3XI.com</a>
+      </div>
 
-  <div class="contact-block">
-    <div class="label">Phone</div>
-    <a href="tel:+14695567447">+1 (469) 556-7447</a>
-  </div>
+      <div class="contact-block">
+        <div class="label">Phone</div>
+        <a href="tel:+14695567447">+1 (469) 556-7447</a>
+      </div>
 
-  <div class="contact-block">
-    <div class="label">Mailing Address</div>
-    <p>
-      3419 Westminster Ave<br>
-      Dallas, Texas 75205-1387<br>
-      United States
-    </p>
-  </div>
+      <div class="contact-block">
+        <div class="label">Mailing Address</div>
+        <p>
+          3419 Westminster Ave<br>
+          Dallas, Texas 75205-1387<br>
+          United States
+        </p>
+      </div>
 
-  <div class="services">
-    <div class="label">Business Inquiries</div>
+      <div class="services">
+        <div class="label">Business Inquiries</div>
 
-    <div class="services-list">
-      <div>Software Development</div>
-      <div>Mobile Applications</div>
-      <div>Artificial Intelligence Solutions</div>
-      <div>Photography & Videography</div>
-      <div>Creative Media Production</div>
-      <div>Strategic Partnerships</div>
-    </div>
-  </div>
+        <div class="services-list">
+          <div>Software Development</div>
+          <div>Mobile Applications</div>
+          <div>Artificial Intelligence Solutions</div>
+          <div>Photography & Videography</div>
+          <div>Creative Media Production</div>
+          <div>Strategic Partnerships</div>
+        </div>
+      </div>
 
-</section>
-```
-
+    </section>
   </main>
 
   <footer class="copyright">
