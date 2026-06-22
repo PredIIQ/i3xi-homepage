@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>I3XI LLC</title>
-
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
@@ -23,6 +22,26 @@
       font-family: Arial, sans-serif;
       background: #020202;
       color: white;
+    }
+
+    body {
+      animation: pageFade 0.7s ease forwards;
+    }
+
+    @keyframes pageFade {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    a {
+      transition: color 0.3s ease, opacity 0.3s ease;
     }
 
     .page {
@@ -50,7 +69,6 @@
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      transition: 0.3s ease;
     }
 
     .nav a:hover {
@@ -107,7 +125,6 @@
     .info-box {
       width: 100%;
       max-width: 520px;
-      transform: translateX(45px);
     }
 
     .brand {
@@ -134,8 +151,7 @@
       margin-top: 0;
       align-items: center;
       justify-items: center;
-
-      transform: translate(-40px, 25px);
+      transform: translate(-40px, 20px);
     }
 
     .brand-logo {
@@ -208,7 +224,6 @@
 
       .info-box {
         max-width: 520px;
-        transform: none;
       }
 
       .brand {
@@ -226,6 +241,7 @@
       .brand-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 18px;
+        transform: none;
       }
 
       .brand-logo img {
@@ -259,7 +275,6 @@
     </section>
 
     <section class="info-side">
-
       <div class="info-box">
 
         <h1 class="brand">I3XI LLC</h1>
@@ -297,7 +312,6 @@
         </div>
 
       </div>
-
     </section>
 
   </main>
